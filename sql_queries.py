@@ -134,8 +134,7 @@ staging_songs_copy = ("""
     FORMAT AS JSON 'auto';
 """).format(SONG_DATA, ARN, REGION)
 
-# FINAL TABLES
-#SELECT DISTINCT to_timestamp(to_char(ev.ts, '9999-99-99 99:99:99'), 'YYYY-MM-DD HH24:MI:SS'),
+
 songplay_table_insert = ("""
     INSERT INTO songplay (start_time, user_id, level, song_id, artist_id, session_id, location, user_agent)
     SELECT DISTINCT ev.ts,
